@@ -55,7 +55,7 @@ def date_is_past(value):
         )
 
 
-def date_is_present_or_past(value):
+def date_is_past_or_present(value):
     if isinstance(value, datetime.date):
         if value > datetime.date.today():
             raise ValidationError(
