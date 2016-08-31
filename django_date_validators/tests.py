@@ -4,7 +4,7 @@ from django.test import TestCase
 from django_date_validators import validators
 
 
-class DateIsFutureTestCase(APITestCase):
+class DateIsFutureTestCase(TestCase):
     """
     """
     def setUp(self):
@@ -27,7 +27,7 @@ class DateIsFutureTestCase(APITestCase):
         )
 
 
-class DateIsPresentOrFutureTestCase(APITestCase):
+class DateIsPresentOrFutureTestCase(TestCase):
     """
     """
     def setUp(self):
@@ -50,30 +50,7 @@ class DateIsPresentOrFutureTestCase(APITestCase):
         )
 
 
-class DateIsPresentOrFutureTestCase(APITestCase):
-    """
-    """
-    def setUp(self):
-        self.past_date = date.today() - timedelta(days=1)
-        self.present_date = date.today()
-        self.future_date = date.today() + timedelta(days=1)
-
-    def test_valid(self):
-        self.assertNotEqual(
-            validators.date_is_present_or_future(self.past_date),
-            True
-        )
-        self.assertEqual(
-            validators.date_is_present_or_future(self.present_date),
-            True
-        )
-        self.assertEqual(
-            validators.date_is_present_or_future(self.future_date),
-            True
-        )
-
-
-class DateIsPastTestCase(APITestCase):
+class DateIsPastTestCase(TestCase):
     """
     """
     def setUp(self):
@@ -96,7 +73,7 @@ class DateIsPastTestCase(APITestCase):
         )
 
 
-class DateIsPastOrPresentTestCase(APITestCase):
+class DateIsPastOrPresentTestCase(TestCase):
     """
     """
     def setUp(self):

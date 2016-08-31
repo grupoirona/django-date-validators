@@ -69,4 +69,4 @@ def date_is_past_or_present(value):
     else:
         raise ValidationError(
             _("The value entered isn't a valid type of date or datetime.")
-)
+        )
