@@ -3,3 +3,4 @@ isort
 coverage
 tox
 wheel
+setuptools
